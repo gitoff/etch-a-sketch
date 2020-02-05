@@ -13,15 +13,18 @@
         <button class='clear' onclick='clearBoard()'>Clear</button>
     </div>
 
+    <div class='square-wrapper'></div>
+
 <script>
     const container = document.querySelector('.container')
+    const wrapper = document.querySelector('.square-wrapper')
 
     // flexbox
     function createBoard(size) {
         for (let i = 0; i < size; i++) {
             let row = document.createElement('div')
             row.className = `row`
-            container.appendChild(row)
+            wrapper.appendChild(row)
 
             for (let j = 0; j < size; j++) {
                 let square = document.createElement('div')
@@ -47,7 +50,17 @@
     } */
 
     function changeColor(e) {
-        e.target.classList.add('fill-color')
+        let randomColor = Math.floor(Math.random()*16777215).toString(16)
+
+        if (e.target.style.backgroundColor == '') {
+            e.target.style.backgroundColor = '#' + randomColor
+            e.target.style.opacity = 1
+        } else if (e.target.style.opacity > 0 ) {
+            e.target.style.opacity -= 0.1
+        }
+        
+        /* document.documentElement.style.setProperty('--square-color', '#' + randomColor)
+        e.target.classList.add('fill-color') */
     }
 
     // Initialize 16x16 square grid

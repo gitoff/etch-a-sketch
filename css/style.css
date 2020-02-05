@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+.square-wrapper {
+    border: 1px solid black;
+    background-color: black;
+}
+
 .row {
     padding: 0;
     margin: 0;
@@ -19,6 +24,7 @@
 
 .square {
     background: white;
+    border: 1px solid black;
     flex: 1 0 auto;
     height:auto;
 }
@@ -30,7 +36,7 @@
 }
 
 .fill-color {
-    background: black;
+    background: var(--square-color);
 }
 
 button.clear {
