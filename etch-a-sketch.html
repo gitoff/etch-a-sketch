@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class='container'></div>
+
+<script>
+    // Initialize 16x16 square grids
+    const container = document.querySelector('.container')
+
+    // flexbox
+    function createBoard(size) {
+        for (let i = 0; i < size; i++) {
+            let row = document.createElement('div')
+            row.className = `row`
+            container.appendChild(row)
+
+            for (let j = 0; j < size; j++) {
+                let square = document.createElement('div')
+                square.className = `square`
+                row.appendChild(square)
+            }
+        }
+    }
+
+    /* // CSS Grid
+    function createBoard(size) {
+        document.documentElement.style.setProperty('--col-size', size)
+
+        for (let i = 0; i < size*size; i++) {
+            let square = document.createElement('div')
+            square.className = `square`
+            container.appendChild(square)
+        }
+    } */
+
+    createBoard(7)
+
+</script>
+    
+    
+</body>
+</html>
