@@ -14,7 +14,7 @@
 }
 
 .square {
-    background: tomato;
+    background: white;
     flex: 1 0 auto;
     height:auto;
 }
@@ -23,4 +23,8 @@
     content:'';
     float:left;
     padding-top:100%;
+}
+
+.fill-color {
+    background: black;
 }

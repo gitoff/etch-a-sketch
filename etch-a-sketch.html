@@ -39,8 +39,16 @@
         }
     } */
 
+    function changeColor(e) {
+        e.target.classList.add('fill-color')
+    }
+
     // Initialize 16x16 square grid
     createBoard(16)
+
+    // Create event listeners on squares
+    let squares = document.querySelectorAll('.square')
+    squares.forEach(square => square.addEventListener('mouseover', changeColor))
 
 </script>
     
