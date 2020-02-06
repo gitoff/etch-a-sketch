@@ -68,6 +68,9 @@
 
     function clearBoard() {
         let newSize = prompt('Enter new grid size', '16')
+        if (newSize === null) {
+            return
+        }
         let rows = document.querySelectorAll('.row')
         rows.forEach(row => row.parentNode.removeChild(row))
         createBoard(newSize)
